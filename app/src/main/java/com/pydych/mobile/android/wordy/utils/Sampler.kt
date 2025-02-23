@@ -1,4 +1,4 @@
-package com.pydych.mobile.android.wordy
+package com.pydych.mobile.android.wordy.utils
 
 class Sampler<T>(private val elements: List<Pair<T, Double>>) {
     private val normalizedScores: List<Double>

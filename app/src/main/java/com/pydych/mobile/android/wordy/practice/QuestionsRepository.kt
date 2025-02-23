@@ -1,4 +1,6 @@
-package com.pydych.mobile.android.wordy
+package com.pydych.mobile.android.wordy.practice
+
+import com.pydych.mobile.android.wordy.utils.Sampler
 
 class QuestionsRepository(private val questionsDao: QuestionsDao) {
     private val questions = questionsDao.getAllQuestions().toMutableList()
@@ -16,10 +18,27 @@ class QuestionsRepository(private val questionsDao: QuestionsDao) {
         }).sample()
     }
 
+    fun getAllQuestions(): List<Question> {
+        return questions.toList()
+    }
+
     fun updateWordStats(question: Question, wasCorrect: Boolean) {
         question.attempts++
         if (!wasCorrect) question.incorrectAttempts++
 
         questionsDao.updateQuestion(question)
+    }
+
+    fun removeQuestion(question: Question) {
+        questionsDao.removeQuestion(question)
+        questions.remove(question)
+    }
+
+    fun updateQuestion(question: Question) {
+        questionsDao.updateQuestion(question)
+        val index = questions.indexOfFirst { it.id == question.id }
+        if (index != -1) {
+            questions[index] = question
+        }
     }
 }

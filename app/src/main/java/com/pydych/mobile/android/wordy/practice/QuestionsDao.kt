@@ -1,6 +1,7 @@
-package com.pydych.mobile.android.wordy
+package com.pydych.mobile.android.wordy.practice
 
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
@@ -15,4 +16,7 @@ interface QuestionsDao {
 
     @Update
     fun updateQuestion(question: Question)
+
+    @Delete
+    fun removeQuestion(question: Question)
 }

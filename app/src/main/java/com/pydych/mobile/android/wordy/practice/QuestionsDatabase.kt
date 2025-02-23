@@ -1,4 +1,4 @@
-package com.pydych.mobile.android.wordy
+package com.pydych.mobile.android.wordy.practice
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
