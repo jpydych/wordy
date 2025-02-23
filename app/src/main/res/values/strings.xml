@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Wordy</string>
+    <string name="add_new_question">Add new question</string>
+    <string name="start_practice">Start practice</string>
+    <string name="i_knew_it">I knew it</string>
+    <string name="need_practice">Need practice</string>
+    <string name="show_answer">Show answer</string>
+    <string name="skip_question">Skip</string>
+</resources>
